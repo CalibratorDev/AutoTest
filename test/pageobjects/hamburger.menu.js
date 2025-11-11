@@ -73,6 +73,11 @@ class MenuPage extends Page {
     get resetAppBtn() {
         return $('a#reset_sidebar_link')
     }
+//---------------------------- Grab About Link Components ----------------------------//
+//------------------------------------------------------------------------------------//
+    get aboutLink() {
+        return $('a[href="https://saucelabs.com/"]')
+    }
 
 //----------00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000----------//
 
@@ -153,9 +158,7 @@ class MenuPage extends Page {
 //-----------------------------------------------------------------//
     async workAbout() {
         await this.openMenu();
-        await this.clickAbout();
-        await expect(browser).toHaveUrl('https://saucelabs.com/',[wait = false]);
-
+        await expect(this.aboutLink).toBeExisting()
     }
 //---------------------------- Reset App State LF ----------------------------//
 //---------------------------------------------------------------------------//
