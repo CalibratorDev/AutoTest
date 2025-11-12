@@ -12,5 +12,9 @@ describe('Logging in to test the four menu options', () => {
         await MenuPage.workAbout()
     })
 
+    it('Will add items to the cart menu, and then reset the app state to remove them=', async () => {
+        await MenuPage.workCart()
+    })
+
 })
 

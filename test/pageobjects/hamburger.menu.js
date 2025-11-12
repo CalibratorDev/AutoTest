@@ -170,6 +170,17 @@ class MenuPage extends Page {
         await this.resetAppBtn.click();
         await this.closeMenu();
     }
+//---------------------------- Work a Few Cart Functions LF ----------------------------//
+//-------------------------------------------------------------------------------------//
+    async workCart() {
+        await this.openCart();
+        await this.clickContShop();
+        await this.openCart();
+        await this.checkout();
+        await this.openCart();
+        await this.clickContShop();
+        await this.workReset();
+    }
 }
 
 export default new MenuPage();
